@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compteur index{% endblock %}
+
+{% block body %}
+    <h1>Compteur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumCompteur</th>
+                <th>Serie</th>
+                <th>Marque</th>
+                <th>TypeCompteur</th>
+                <th>IndexCompteur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for compteur in compteurs %}
+            <tr>
+                <td>{{ compteur.id }}</td>
+                <td>{{ compteur.numCompteur }}</td>
+                <td>{{ compteur.serie }}</td>
+                <td>{{ compteur.marque }}</td>
+                <td>{{ compteur.typeCompteur }}</td>
+                <td>{{ compteur.indexCompteur }}</td>
+                <td>
+                    <a href="{{ path('compteur_show', {'id': compteur.id}) }}">show</a>
+                    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('compteur_new') }}">Create new</a>
+{% endblock %}
