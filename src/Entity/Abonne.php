@@ -66,6 +66,24 @@ class Abonne
      */
     private $refEnc;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="abonnes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categories;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tarif", inversedBy="abonnes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $tarifs;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Compteur", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $compteurs;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -187,6 +205,42 @@ class Abonne
     public function setRefEnc(int $refEnc): self
     {
         $this->refEnc = $refEnc;
+
+        return $this;
+    }
+
+    public function getCategories(): ?Categorie
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?Categorie $categories): self
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function getTarifs(): ?Tarif
+    {
+        return $this->tarifs;
+    }
+
+    public function setTarifs(?Tarif $tarifs): self
+    {
+        $this->tarifs = $tarifs;
+
+        return $this;
+    }
+
+    public function getCompteurs(): ?Compteur
+    {
+        return $this->compteurs;
+    }
+
+    public function setCompteurs(Compteur $compteurs): self
+    {
+        $this->compteurs = $compteurs;
 
         return $this;
     }
