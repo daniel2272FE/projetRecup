@@ -16,15 +16,15 @@
                 <td>{{ tarif.designation }}</td>
             </tr>
             <tr>
-                <th>PrixUnitaireFixe</th>
+                <th>Prix Unitaire Fixe</th>
                 <td>{{ tarif.prixUnitaireFixe }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('tarif_index') }}">back to list</a>
+    <a href="{{ path('tarif_index') }}">Voir la liste</a>
 
-    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}">edit</a>
+    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}">editer</a>
 
     {{ include('tarif/_delete_form.html.twig') }}
 {% endblock %}

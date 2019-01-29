@@ -12,7 +12,7 @@
                 <td>{{ compteur.id }}</td>
             </tr>
             <tr>
-                <th>NumCompteur</th>
+                <th>Numéro Compteur</th>
                 <td>{{ compteur.numCompteur }}</td>
             </tr>
             <tr>
@@ -24,7 +24,7 @@
                 <td>{{ compteur.marque }}</td>
             </tr>
             <tr>
-                <th>TypeCompteur</th>
+                <th>Type du compteur</th>
                 <td>{{ compteur.typeCompteur }}</td>
             </tr>
             <tr>
@@ -34,9 +34,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('compteur_index') }}">back to list</a>
+    <a href="{{ path('compteur_index') }}">Voir la liste</a>
 
-    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}">edit</a>
+    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}">editer</a>
 
     {{ include('compteur/_delete_form.html.twig') }}
 {% endblock %}

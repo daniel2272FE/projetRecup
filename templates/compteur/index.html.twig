@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Compteur index{% endblock %}
+{% block title %}Compteur{% endblock %}
 
 {% block body %}
-    <h1>Compteur index</h1>
+    <h1>liste des Compteurs</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NumCompteur</th>
+                <th>Numero Compteur</th>
                 <th>Serie</th>
                 <th>Marque</th>
-                <th>TypeCompteur</th>
-                <th>IndexCompteur</th>
+                <th>Type Compteur</th>
+                <th>Index Compteur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -27,17 +27,17 @@
                 <td>{{ compteur.typeCompteur }}</td>
                 <td>{{ compteur.indexCompteur }}</td>
                 <td>
-                    <a href="{{ path('compteur_show', {'id': compteur.id}) }}">show</a>
-                    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}">edit</a>
+                    <a href="{{ path('compteur_show', {'id': compteur.id}) }}">voir</a>
+                    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucune compteur n'est ajouter</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('compteur_new') }}">Create new</a>
+    <a href="{{ path('compteur_new') }}">Ajouter nouveau compteur</a>
 {% endblock %}
