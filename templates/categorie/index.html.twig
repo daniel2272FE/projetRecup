@@ -19,8 +19,8 @@
                 <td>{{ categorie.id }}</td>
                 <td>{{ categorie.libelleCategorie }}</td>
                 <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">voir</a>
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">editer</a>
+                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}"><button class="btn btn-outline-info">voir</button></a>
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}"><button class="btn btn-outline-warning">editer</button></a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('categorie_new') }}">Créer nouveau</a>
+    <a href="{{ path('categorie_new') }}"> <button class="btn btn-outline-primary">Créer nouveau</button></a>
 {% endblock %}
