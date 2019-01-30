@@ -33,13 +33,13 @@ class CategorieController extends AbstractController
         $categorie = new Categorie();
         $form = $this->createForm(CategorieType::class, $categorie);
         $form->handleRequest($request);
+        $test = $request->request->get("libelleCategorie");
+
+        dump($test);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($categorie);
-            $entityManager->flush();
 
-            return $this->redirectToRoute('categorie_index');
         }
 
         return $this->render('categorie/new.html.twig', [

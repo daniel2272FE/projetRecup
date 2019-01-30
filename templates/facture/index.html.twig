@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Facture{% endblock %}
+
+{% block body %}
+    <h1>Liste des Factures</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numero Facture</th>
+                <th>Date d'édition</th>
+                <th>Date de presentation</th>
+                <th>Date Limite Paiement</th>
+                <th>Consommation Totale</th>
+                <th>Net A Payer</th>
+                <th>Nouvel Index</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for facture in factures %}
+            <tr>
+                <td>{{ facture.id }}</td>
+                <td>{{ facture.numeroFacture }}</td>
+                <td>{{ facture.dateEdition ? facture.dateEdition|date('Y-m-d') : '' }}</td>
+                <td>{{ facture.datePresentation ? facture.datePresentation|date('Y-m-d') : '' }}</td>
+                <td>{{ facture.dateLimitePaiement ? facture.dateLimitePaiement|date('Y-m-d') : '' }}</td>
+                <td>{{ facture.consommationTotale }}</td>
+                <td>{{ facture.netAPayer }}</td>
+                <td>{{ facture.nouvelIndex }}</td>
+                <td>
+                    <a href="{{ path('facture_show', {'id': facture.id}) }}">voir</a>
+                    <a href="{{ path('facture_edit', {'id': facture.id}) }}">editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucune Facture n'est enregistré</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_new') }}">Ajouter nouveau facture</a>
+{% endblock %}
