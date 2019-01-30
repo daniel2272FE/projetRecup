@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+
+    {{ form_row(form.abonnes) }}
+
+    {{ form_row(form.nouvelIndex) }}
+
+    <button class="btn">{{ button_label|default('Ajouter') }}</button>
+
+{{ form_end(form) }}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Facture{% endblock %}
+
+{% block body %}
+    <h1>Facture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ facture.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero Facture</th>
+                <td>{{ facture.numeroFacture }}</td>
+            </tr>
+            <tr>
+                <th>Date Edition</th>
+                <td>{{ facture.dateEdition ? facture.dateEdition|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date Presentation</th>
+                <td>{{ facture.datePresentation ? facture.datePresentation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date Limite Paiement</th>
+                <td>{{ facture.dateLimitePaiement ? facture.dateLimitePaiement|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Consommation Totale</th>
+                <td>{{ facture.consommationTotale }}</td>
+            </tr>
+            <tr>
+                <th>Net A Payer</th>
+                <td>{{ facture.netAPayer }}</td>
+            </tr>
+            <tr>
+                <th>Nouvel Index</th>
+                <td>{{ facture.nouvelIndex }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_index') }}">back to list</a>
+
+    <a href="{{ path('facture_edit', {'id': facture.id}) }}">edit</a>
+
+    {{ include('facture/_delete_form.html.twig') }}
+{% endblock %}
