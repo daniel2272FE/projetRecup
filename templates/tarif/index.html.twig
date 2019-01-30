@@ -21,8 +21,8 @@
                 <td>{{ tarif.designation }}</td>
                 <td>{{ tarif.prixUnitaireFixe }}</td>
                 <td>
-                    <a href="{{ path('tarif_show', {'id': tarif.id}) }}">voir/a>
-                    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}">editer</a>
+                    <a href="{{ path('tarif_show', {'id': tarif.id}) }}"><button class="btn btn-outline-info">voir</button></a>
+                    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}"><button class="btn btn-outline-warning">editer</button></a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('tarif_new') }}">Créer nouveau tarif</a>
+    <a href="{{ path('tarif_new') }}"><button class="btn btn-outline-primary">Créer nouveau tarif</button></a>
 {% endblock %}

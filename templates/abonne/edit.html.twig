@@ -7,7 +7,7 @@
 
     {{ include('abonne/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('abonne_index') }}">Voir la liste</a>
+    <a href="{{ path('abonne_index') }}"> <button class="btn btn-outline-info"></button></a>
 
     {{ include('abonne/_delete_form.html.twig') }}
 {% endblock %}

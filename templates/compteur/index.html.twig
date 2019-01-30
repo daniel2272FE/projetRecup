@@ -27,8 +27,8 @@
                 <td>{{ compteur.typeCompteur }}</td>
                 <td>{{ compteur.indexCompteur }}</td>
                 <td>
-                    <a href="{{ path('compteur_show', {'id': compteur.id}) }}">voir</a>
-                    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}">editer</a>
+                    <a href="{{ path('compteur_show', {'id': compteur.id}) }}"><button class="btn btn-outline-info">voir</button></a>
+                    <a href="{{ path('compteur_edit', {'id': compteur.id}) }}"><button class="btn btn-outline-warning">editer</button></a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('compteur_new') }}">Ajouter nouveau compteur</a>
+    <a href="{{ path('compteur_new') }}"><button class="btn btn-outline-primary">Ajouter nouveau compteur</button></a>
 {% endblock %}
